@@ -1,5 +1,13 @@
 {
   "files": {
+    "commands/misc/prueba.js": [
+      {
+        "id": "ebb19a2d-0348-4bc8-99d5-4c6c295f0e90",
+        "line": 12,
+        "version": 327,
+        "index": 236
+      }
+    ],
     "commands/misc/tula.js": [
       {
         "id": "2860d720-3d05-48bc-9467-cb7bac8bc199",
