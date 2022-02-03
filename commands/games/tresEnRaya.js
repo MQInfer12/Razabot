@@ -25,22 +25,22 @@ module.exports =
 
     if(terjuego == false)
     {
-      var terspaces = new Array(9);
-      terspaces.fill(':black_circle:');
+      let tablero = new Array(9);
+      tablero.fill(':black_circle:');
       terjuego = true;
       cont = 1;
-      var color = '#F83F3F';
-      var jugador = (cont + 1) % 2 + 1;
-      var estado = "Turno: " + cont + "\t\tJugador: " + jugador;
-      var ganador;
-      var ficha;
-      var ultimaJugada = "";
-      var usuario;
+      let color = '#F83F3F';
+      let jugador = (cont + 1) % 2 + 1;
+      let estado = "Turno: " + cont + "\t\tJugador: " + jugador;
+      let ganador;
+      let ficha;
+      let ultimaJugada = "";
+      let usuario;
 
-      var jugador1;
-      var jugador2;
+      let jugador1;
+      let jugador2;
 
-      let embed = dibujarTurno(color, estado, terspaces, ultimaJugada);
+      let embed = dibujarTurno(color, estado, tablero, ultimaJugada);
       
       let msgSended = await message.channel.send(embed);
 
@@ -91,7 +91,7 @@ module.exports =
 
         if(cont != 1)
         {
-          let embed2 = dibujarTurno(color, estado, terspaces, ultimaJugada);
+          let embed2 = dibujarTurno(color, estado, tablero, ultimaJugada);
 
           await msgSended.edit(embed2);
         }
@@ -127,49 +127,49 @@ module.exports =
           {
             ultimaJugada = usuario.username + " jugó " + reaction.emoji.name + ficha;
 
-            if(reaction.emoji.name === '↖️' && terspaces[0] == ":black_circle:")
+            if(reaction.emoji.name === '↖️' && tablero[0] == ":black_circle:")
             {
-              terspaces[0] = ":x:";
+              tablero[0] = ":x:";
               msgSended.reactions.cache.get('↖️').remove();
               cont++; 
-            } else if (reaction.emoji.name === '⬆️' && terspaces[1] == ":black_circle:")
+            } else if (reaction.emoji.name === '⬆️' && tablero[1] == ":black_circle:")
             {
-              terspaces[1] = ":x:";
+              tablero[1] = ":x:";
               msgSended.reactions.cache.get('⬆️').remove();
               cont++; 
-            } else if (reaction.emoji.name === '↗️' && terspaces[2] == ":black_circle:")
+            } else if (reaction.emoji.name === '↗️' && tablero[2] == ":black_circle:")
             {
-              terspaces[2] = ":x:";
+              tablero[2] = ":x:";
               msgSended.reactions.cache.get('↗️').remove();
               cont++; 
-            } else if(reaction.emoji.name === '⬅️' && terspaces[3] == ":black_circle:")
+            } else if(reaction.emoji.name === '⬅️' && tablero[3] == ":black_circle:")
             {
-              terspaces[3] = ":x:";
+              tablero[3] = ":x:";
               msgSended.reactions.cache.get('⬅️').remove();
               cont++; 
-            } else if (reaction.emoji.name === '⏺️' && terspaces[4] == ":black_circle:")
+            } else if (reaction.emoji.name === '⏺️' && tablero[4] == ":black_circle:")
             {
-              terspaces[4] = ":x:";
+              tablero[4] = ":x:";
               msgSended.reactions.cache.get('⏺️').remove();
               cont++; 
-            } else if(reaction.emoji.name === '➡️' && terspaces[5] == ":black_circle:")
+            } else if(reaction.emoji.name === '➡️' && tablero[5] == ":black_circle:")
             {
-              terspaces[5] = ":x:";
+              tablero[5] = ":x:";
               msgSended.reactions.cache.get('➡️').remove();
               cont++; 
-            } else if (reaction.emoji.name === '↙️' && terspaces[6] == ":black_circle:")
+            } else if (reaction.emoji.name === '↙️' && tablero[6] == ":black_circle:")
             {
-              terspaces[6] = ":x:";
+              tablero[6] = ":x:";
               msgSended.reactions.cache.get('↙️').remove();
               cont++; 
-            } else if(reaction.emoji.name === '⬇️' && terspaces[7] == ":black_circle:")
+            } else if(reaction.emoji.name === '⬇️' && tablero[7] == ":black_circle:")
             {
-              terspaces[7] = ":x:";
+              tablero[7] = ":x:";
               msgSended.reactions.cache.get('⬇️').remove();
               cont++; 
-            } else if (reaction.emoji.name === '↘️' && terspaces[8] == ":black_circle:")
+            } else if (reaction.emoji.name === '↘️' && tablero[8] == ":black_circle:")
             {
-              terspaces[8] = ":x:";
+              tablero[8] = ":x:";
               msgSended.reactions.cache.get('↘️').remove();
               cont++; 
             } else if (reaction.emoji.name === '❌')
@@ -184,49 +184,49 @@ module.exports =
           {
             ultimaJugada = usuario.username + " jugó " + reaction.emoji.name + ficha;
 
-            if(reaction.emoji.name === '↖️' && terspaces[0] == ":black_circle:")
+            if(reaction.emoji.name === '↖️' && tablero[0] == ":black_circle:")
             {
-              terspaces[0] = ":o:";
+              tablero[0] = ":o:";
               msgSended.reactions.cache.get('↖️').remove();
               cont++; 
-            } else if(reaction.emoji.name === '⬆️' && terspaces[1] == ":black_circle:")
+            } else if(reaction.emoji.name === '⬆️' && tablero[1] == ":black_circle:")
             {
-              terspaces[1] = ":o:";
+              tablero[1] = ":o:";
               msgSended.reactions.cache.get('⬆️').remove();
               cont++; 
-            } else if (reaction.emoji.name === '↗️' && terspaces[2] == ":black_circle:")
+            } else if (reaction.emoji.name === '↗️' && tablero[2] == ":black_circle:")
             {
-              terspaces[2] = ":o:";
+              tablero[2] = ":o:";
               msgSended.reactions.cache.get('↗️').remove();
               cont++; 
-            } else if(reaction.emoji.name === '⬅️' && terspaces[3] == ":black_circle:")
+            } else if(reaction.emoji.name === '⬅️' && tablero[3] == ":black_circle:")
             {
-              terspaces[3] = ":o:";
+              tablero[3] = ":o:";
               msgSended.reactions.cache.get('⬅️').remove();
               cont++; 
-            } else if (reaction.emoji.name === '⏺️' && terspaces[4] == ":black_circle:")
+            } else if (reaction.emoji.name === '⏺️' && tablero[4] == ":black_circle:")
             {
-              terspaces[4] = ":o:";
+              tablero[4] = ":o:";
               msgSended.reactions.cache.get('⏺️').remove();
               cont++; 
-            } else if(reaction.emoji.name === '➡️' && terspaces[5] == ":black_circle:")
+            } else if(reaction.emoji.name === '➡️' && tablero[5] == ":black_circle:")
             {
-              terspaces[5] = ":o:";
+              tablero[5] = ":o:";
               msgSended.reactions.cache.get('➡️').remove();
               cont++; 
-            } else if (reaction.emoji.name === '↙️' && terspaces[6] == ":black_circle:")
+            } else if (reaction.emoji.name === '↙️' && tablero[6] == ":black_circle:")
             {
-              terspaces[6] = ":o:";
+              tablero[6] = ":o:";
               msgSended.reactions.cache.get('↙️').remove();
               cont++; 
-            } else if(reaction.emoji.name === '⬇️' && terspaces[7] == ":black_circle:")
+            } else if(reaction.emoji.name === '⬇️' && tablero[7] == ":black_circle:")
             {
-              terspaces[7] = ":o:";
+              tablero[7] = ":o:";
               msgSended.reactions.cache.get('⬇️').remove();
               cont++; 
-            } else if (reaction.emoji.name === '↘️' && terspaces[8] == ":black_circle:")
+            } else if (reaction.emoji.name === '↘️' && tablero[8] == ":black_circle:")
             {
-              terspaces[8] = ":o:";
+              tablero[8] = ":o:";
               msgSended.reactions.cache.get('↘️').remove();
               cont++; 
             } 
@@ -236,21 +236,21 @@ module.exports =
             msgSended.reactions.resolve(reaction.emoji.name).users.remove(usuario.id);
           }
         })
-        .catch(collected => {
+        .catch(() => {
           terjuego = false;
           color = '#EAEBF0';
           estado = "Se acabó el tiempo";
           ultimaJugada = "Empate";
         });
 
-        if((terspaces[0] === ":x:" && terspaces[1] === ":x:" && terspaces[2] === ":x:") ||
-          (terspaces[3] === ":x:" && terspaces[4] === ":x:" && terspaces[5] === ":x:") ||
-          (terspaces[6] === ":x:" && terspaces[7] === ":x:" && terspaces[8] === ":x:") ||
-          (terspaces[0] === ":x:" && terspaces[3] === ":x:" && terspaces[6] === ":x:") ||
-          (terspaces[1] === ":x:" && terspaces[4] === ":x:" && terspaces[7] === ":x:") ||
-          (terspaces[2] === ":x:" && terspaces[5] === ":x:" && terspaces[8] === ":x:") ||
-          (terspaces[0] === ":x:" && terspaces[4] === ":x:" && terspaces[8] === ":x:") ||
-          (terspaces[2] === ":x:" && terspaces[4] === ":x:" && terspaces[6] === ":x:"))
+        if((tablero[0] === ":x:" && tablero[1] === ":x:" && tablero[2] === ":x:") ||
+          (tablero[3] === ":x:" && tablero[4] === ":x:" && tablero[5] === ":x:") ||
+          (tablero[6] === ":x:" && tablero[7] === ":x:" && tablero[8] === ":x:") ||
+          (tablero[0] === ":x:" && tablero[3] === ":x:" && tablero[6] === ":x:") ||
+          (tablero[1] === ":x:" && tablero[4] === ":x:" && tablero[7] === ":x:") ||
+          (tablero[2] === ":x:" && tablero[5] === ":x:" && tablero[8] === ":x:") ||
+          (tablero[0] === ":x:" && tablero[4] === ":x:" && tablero[8] === ":x:") ||
+          (tablero[2] === ":x:" && tablero[4] === ":x:" && tablero[6] === ":x:"))
         {
           terjuego = false;
           color = '#EA0F0F';
@@ -258,14 +258,14 @@ module.exports =
           ultimaJugada = "¡Gana " + ganador + "!";
           break;
         }
-        if((terspaces[0] === ":o:" && terspaces[1] === ":o:" && terspaces[2] === ":o:") ||
-          (terspaces[3] === ":o:" && terspaces[4] === ":o:" && terspaces[5] === ":o:") ||
-          (terspaces[6] === ":o:" && terspaces[7] === ":o:" && terspaces[8] === ":o:") ||
-          (terspaces[0] === ":o:" && terspaces[3] === ":o:" && terspaces[6] === ":o:") ||
-          (terspaces[1] === ":o:" && terspaces[4] === ":o:" && terspaces[7] === ":o:") ||
-          (terspaces[2] === ":o:" && terspaces[5] === ":o:" && terspaces[8] === ":o:") ||
-          (terspaces[0] === ":o:" && terspaces[4] === ":o:" && terspaces[8] === ":o:") ||
-          (terspaces[2] === ":o:" && terspaces[4] === ":o:" && terspaces[6] === ":o:"))
+        if((tablero[0] === ":o:" && tablero[1] === ":o:" && tablero[2] === ":o:") ||
+          (tablero[3] === ":o:" && tablero[4] === ":o:" && tablero[5] === ":o:") ||
+          (tablero[6] === ":o:" && tablero[7] === ":o:" && tablero[8] === ":o:") ||
+          (tablero[0] === ":o:" && tablero[3] === ":o:" && tablero[6] === ":o:") ||
+          (tablero[1] === ":o:" && tablero[4] === ":o:" && tablero[7] === ":o:") ||
+          (tablero[2] === ":o:" && tablero[5] === ":o:" && tablero[8] === ":o:") ||
+          (tablero[0] === ":o:" && tablero[4] === ":o:" && tablero[8] === ":o:") ||
+          (tablero[2] === ":o:" && tablero[4] === ":o:" && tablero[6] === ":o:"))
         {
           terjuego = false;
           color = '#0F3AEA';
@@ -284,8 +284,8 @@ module.exports =
 
       }while(terjuego == true);
 
-      msgSended.reactions.removeAll()
-      let embedFinal = dibujarTurno(color, estado, terspaces, ultimaJugada);
+      msgSended.reactions.removeAll();
+      let embedFinal = dibujarTurno(color, estado, tablero, ultimaJugada);
 
       msgSended.edit(embedFinal);
     }

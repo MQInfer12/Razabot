@@ -1,11 +1,49 @@
 {
   "files": {
+    "commands/games/ludo.js": [
+      {
+        "id": "52b310ee-b1ae-4396-9fe9-4c5fba2c9778",
+        "line": 812,
+        "version": 17126,
+        "index": 24879
+      },
+      {
+        "id": "83b7e34b-9600-4f72-9a25-92f331f59096",
+        "line": 812,
+        "version": 17126,
+        "index": 24879
+      },
+      {
+        "id": "98af14cd-cf6d-4714-8af6-24ffb42cc953",
+        "line": 812,
+        "version": 17126,
+        "index": 24879
+      },
+      {
+        "id": "f57769e6-de0f-4a9d-a07c-baa0548ac9bd",
+        "line": 812,
+        "version": 17126,
+        "index": 24879
+      },
+      {
+        "id": "414b6153-26c9-4228-9662-b57ae67aa97c",
+        "line": 812,
+        "version": 17126,
+        "index": 24879
+      },
+      {
+        "id": "0d4c1728-5dcd-4661-bd24-29d89c0c991c",
+        "line": 812,
+        "version": 17126,
+        "index": 28021
+      }
+    ],
     "commands/misc/prueba.js": [
       {
         "id": "ebb19a2d-0348-4bc8-99d5-4c6c295f0e90",
-        "line": 12,
-        "version": 327,
-        "index": 236
+        "line": 11,
+        "version": 3104,
+        "index": 875
       }
     ],
     "commands/misc/tula.js": [

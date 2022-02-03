@@ -1,12 +1,11 @@
 const Discord = require('discord.js');
 
-module.exports = 
-{
-  name: "prueba",
-  aliases: [],
-  description: "Para probar comandos",
-  run: async (client, message, args) => 
+module.exports =
   {
-    message.channel.send("<@468164977593679886>");    
+    name: "prueba",
+    aliases: [],
+    description: "Para probar comandos",
+    run: async (client, message, args) => 
+    {
+    }
   }
-}
